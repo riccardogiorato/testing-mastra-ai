@@ -1,4 +1,4 @@
-import { Agent } from "@mastra/core/agent";
+import { Agent } from "@mastra/core";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
 import { weatherTool } from "../tools/weather-tool";
@@ -24,7 +24,7 @@ export const weatherAgent = new Agent({
 
       Use the weatherTool to fetch current weather data.
 `,
-  model: together("moonshotai/Kimi-K2-Instruct-0905"),
+   model: together("kimi"),
   tools: { weatherTool },
   memory: new Memory({
     storage: new LibSQLStore({
